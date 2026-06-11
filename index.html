@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>КровляПрофи01 | Строительство и ремонт крыш в Адыгее</title>
     <link rel="stylesheet" href="style.css">
-    
- <link rel="stylesheet" href="https://cloudflare.com">
+    <script>
+        // Главные настройки Telegram (не удалять и не перемещать!)
+        const TELEGRAM_BOT_TOKEN = '8868845999:AAG8MpwfkRuRyuTkCSudbXDMbBdTphXAUYQ';
+        const TELEGRAM_CHAT_ID = '914128134'; 
+    </script>
 </head>
 <body>
 
     <!-- Блок плавающих кнопок связи справа внизу -->
     <div class="fixed-actions-container">
-        <a href="https://wa.me." class="action-btn wa-btn" target="_blank" title="Написать в WhatsApp">💬</a>
+        <a href="https://wa.me" class="action-btn wa-btn" target="_blank" title="Написать в WhatsApp">💬</a>
         <a href="tel:89184208725" class="action-btn call-btn" title="Позвонить">📞</a>
     </div>
 
@@ -41,34 +44,14 @@
     </div>
 </header>
 
-<!-- Простой скрипт для открытия/закрытия меню и скрытия его при клике на раздел -->
-<script>
-    const menuBtn = document.getElementById('menuBtn');
-    const navMenu = document.getElementById('navMenu');
-
-    // Открытие/закрытие по клику на бургер
-    menuBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        menuBtn.innerText = navMenu.classList.contains('active') ? '✕' : '☰';
-    });
-
-    // Закрытие меню при клике на любой раздел
-    document.querySelectorAll('.nav a').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            menuBtn.innerText = '☰';
-        });
-    });
-</script>
-
     <!-- Главный баннер -->
     <section class="hero">
         <div class="hero-overlay"></div>
         <div class="container hero-container">
             <div class="hero-content">
-                <span class="badge"> Строго, соблюдаю технологии и качество</span>
+                <span class="badge">Строго соблюдаю технологии и качество</span>
                 <h1>Надежная крыша<br>для вашего дома</h1>
-                <p>Монтаж и ремонт кровли любой сложности.Надежная бригада, фиксированная смета и официальная гарантия 4 года по договору.</p>
+                <p>Монтаж и ремонт кровли любой сложности. Надежная бригада, фиксированная смета и официальная гарантия 4 года по договору.</p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">Рассчитать стоимость</a>
                     <a href="#portfolio" class="btn btn-secondary">Смотреть работы</a>
@@ -99,341 +82,101 @@
         </div>
     </section>
 
-    <!-- Услуги и цены -->
-    <section id="services" class="services">
-        <div class="container">
-            <span class="section-subtitle">Направления работы</span>
-            <h2 class="section-title">Наши кровельные услуги</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-img-wrapper"><img src="images/service1.jpg" alt="Монтаж под ключ" class="card-img"></div>
-                    <div class="card-content">
-                        <h3>Монтаж под ключ</h3>
-                        <p>Полный комплекс кровельных работ: от возведения стропил до финальной укладки металлочерепицы или профнастила.</p>
-                        <div class="card-footer">
-                            <span class="price">от 950 ₽ / м²</span>
-                            <a href="#contact" class="card-link">Заказать →</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img-wrapper"><img src="images/service2.jpg" alt="Капитальный ремонт" class="card-img"></div>
-                    <div class="card-content">
-                        <h3>Капитальный ремонт</h3>
-                        <p>Устранение протечек, замена поврежденной обрешетки, исправление ошибок прошлых мастеров, гидроизоляция.</p>
-                        <div class="card-footer">
-                            <span class="price">от 400 ₽ / м²</span>
-                            <a href="#contact" class="card-link">Заказать →</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img-wrapper"><img src="images/service3.jpg" alt="Замена покрытия" class="card-img"></div>
-                    <div class="card-content">
-                        <h3>Замена покрытия</h3>
-                        <p>Быстрый демонтаж старого материала, укладка современного долговечного материала.</p>
-                        <div class="card-footer">
-                            <span class="price">от 650 ₽ / м²</span>
-                            <a href="#contact" class="card-link">Заказать →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Наши работы / Примеры объектов -->
-<section id="portfolio" class="portfolio">
-    <div class="container">
-        <span class="section-subtitle">Наш опыт</span>
-        <h2 class="section-title">Примеры объектов</h2>
-        
-        <!-- ИСПРАВЛЕНО: Чистый класс portfolio-grid без конфликтующих старых сеток -->
-        <div class="portfolio-grid">
-            
-            <!-- Объект 1 -->
-            <div class="portfolio-item">
-                <div class="portfolio-img-box">
-                    <img src="images/portfolio1.jpg" alt="Объект 1">
-                    <span class="portfolio-badge">12 дней</span>
-                </div>
-                <h4>Монтаж под ключ</h4>
-                <p>Частный дом 160 м². Металлочерепица , полный монтаж свесов крыши и водосточной системы.</p>
-            </div>
-
-            <!-- Объект 2 -->
-            <div class="portfolio-item">
-                <div class="portfolio-img-box">
-                    <img src="images/portfolio2.jpg" alt="Объект 2">
-                    <span class="portfolio-badge">9 дней</span>
-                </div>
-                <h4>Монтаж мягкой кровли</h4>
-                <p>Дом 170 м². Монтаж стропильной системы,обрешетки,пленки,водосточной системы и укладка кровли.</p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- Блок Наши Reels Работы -->
-<section id="reels-work" class="reels-section">
-    <div class="container">
-        <span class="section-subtitle">Процесс работы</span>
-        <h2 class="section-title">Наши Reels работы</h2>
-        
-        <div class="reels-grid">
-            <!-- Видео 1 -->
-            <div class="reels-item">
-                <video src="video/reels1.mp4" muted loop playsinline></video>
-                <div class="reels-play-btn">▶</div>
-            </div>
-            <!-- Видео 2 -->
-            <div class="reels-item">
-                <video src="video/reels2.mp4" muted loop playsinline></video>
-                <div class="reels-play-btn">▶</div>
-            </div>
-            <!-- Видео 3 -->
-            <div class="reels-item">
-                <video src="video/reels3.mp4" muted loop playsinline></video>
-                <div class="reels-play-btn">▶</div>
-            </div>
-            <!-- Видео 4 -->
-            <div class="reels-item">
-                <video src="video/reels4.mp4" muted loop playsinline></video>
-                <div class="reels-play-btn">▶</div>
-            </div>
-            <!-- Видео 5 -->
-            <div class="reels-item">
-                <video src="video/reels5.mp4" muted loop playsinline></video>
-                <div class="reels-play-btn">▶</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Скрипт: запускает видео при клике и ставит на паузу при повторном клике -->
-<script>
-    document.querySelectorAll('.reels-item').forEach(item => {
-        const video = item.querySelector('video');
-        const playBtn = item.querySelector('.reels-play-btn');
-        
-        item.addEventListener('click', () => {
-            if (video.paused) {
-                // Останавливаем все другие видео перед запуском нового
-                document.querySelectorAll('video').forEach(v => v.pause());
-                document.querySelectorAll('.reels-play-btn').forEach(b => b.style.display = 'flex');
-                
-                video.play();
-                playBtn.style.display = 'none';
-            } else {
-                video.pause();
-                playBtn.style.display = 'flex';
-            }
-        });
-    });
-</script>
-
-
-<!-- Блок отзывов -->
-<section id="reviews" class="reviews-section">
-    <div class="container">
-        <h2 class="section-title">Что говорят наши клиенты</h2>
-        
-        <div class="reviews-grid">
-
-            <!-- Отзыв 1: Аслан -->
-            <div class="card">
-                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                    <!-- РАЗМЕР КАРТИНКИ ЗАФИКСИРОВАН В HTML -->
-                    <img src="images/client1.jpg" alt="Аслан" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid #FFCC00; flex-shrink: 0;">
-                    <div>
-                        <h4 style="margin: 0; font-size: 1.1rem; color: #1f2329;">Аслан</h4>
-                        <span style="font-size: 0.8rem; color: #5e6670; font-weight: 600;">г. Майкоп</span>
-                    </div>
-                </div>
-                <p style="color: #5e6670; font-size: 0.9rem; font-style: italic; min-height: 110px; margin: 0;">"Делали крышу с нуля на доме. Сделали быстро, всего за 2 недели. Итоговая цена осталась такой же, как и посчитали в смете в самый первый день. Рекомендую!"</p>
-                <div style="color: #FFCC00; font-size: 1.1rem; margin-top: 15px;">★★★★★</div>
-            </div>
-
-            <!-- Отзыв 2: Сергей Николаевич -->
-            <div class="card">
-                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                    <!-- РАЗМЕР КАРТИНКИ ЗАФИКСИРОВАН В HTML -->
-                    <img src="images/client2.jpg" alt="Сергей Николаевич" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid #FFCC00; flex-shrink: 0;">
-                    <div>
-                        <h4 style="margin: 0; font-size: 1.1rem; color: #1f2329;">Сергей Николаевич</h4>
-                        <span style="font-size: 0.8rem; color: #5e6670; font-weight: 600;">г. Белореченск</span>
-                    </div>
-                </div>
-                <p style="color: #5e6670; font-size: 0.9rem; font-style: italic; min-height: 110px; margin: 0;">"Ребята делали полный монтаж. Работу сделали очень хорошо,мастер бесплатно приехал на замер, всё посчитал. Очень доволен результатом."</p>
-                <div style="color: #FFCC00; font-size: 1.1rem; margin-top: 15px;">★★★★★</div>
-            </div>
-
-            <!-- Отзыв 3: Марина К. -->
-            <div class="card">
-                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                    <!-- РАЗМЕР КАРТИНКИ ЗАФИКСИРОВАН В HTML -->
-                    <img src="images/client3.jpg" alt="Марина К." style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid #FFCC00; flex-shrink: 0;">
-                    <div>
-                        <h4 style="margin: 0; font-size: 1.1rem; color: #1f2329;">Марина К.</h4>
-                        <span style="font-size: 0.8rem; color: #5e6670; font-weight: 600;">ст. Ханская</span>
-                    </div>
-                </div>
-                <p style="color: #5e6670; font-size: 0.9rem; font-style: italic; min-height: 110px; margin: 0;">"Нужна была замена старого шифера на профнастил. Сделали аккуратно, и быстро. Отдельный плюс за вежливое общение и пунктуальность!"</p>
-                <div style="color: #FFCC00; font-size: 1.1rem; margin-top: 15px;">★★★★★</div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-    <!-- Этапы работы -->
-    <section id="steps" class="steps">
-        <div class="container">
-            <span class="section-subtitle">Процесс</span>
-            <h2 class="section-title">Этапы сотрудничества</h2>
-            <div class="grid-4">
-                <div class="step-item">
-                    <div class="step-num">01</div>
-                    <h4>Замер</h4>
-                    <p>Бесплатный выезд мастера на ваш объект для точного обмера.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-num">02</div>
-                    <h4>Смета</h4>
-                    <p>Прозрачный расчет стоимости, фиксируемый в договоре.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-num">03</div>
-                    <h4>Монтаж</h4>
-                    <p>Быстрая доставка материалов и выполнение всех работ качественно.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-num">04</div>
-                    <h4>Гарантия</h4>
-                    <p>Сдача объекта, подписание акта и выдача гарантии на 4 лет.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Зона обслуживания -->
-    <section id="geo" class="portfolio" style="background: #f7f9fa; border-top: 1px solid rgba(0,0,0,0.04);">
+    <!-- Блок Услуги -->
+    <section id="services" style="padding: 60px 0; background: #fff;">
         <div class="container" style="text-align: center;">
-            <span class="section-subtitle">География работы</span>
-            <h2 class="section-title">Зона обслуживания</h2>
-            <p style="max-width: 700px; margin: 0 auto 25px; color: #5e6670; font-weight: 500;">Оперативно и бесплатно приедем на замер в следующие населенные пункты и их ближайшие округа:</p>
-            <div style="background: #ffffff; padding: 25px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.04); font-weight: 700; color: #1f2329; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px 35px; font-size: 1.1rem;">
-                <span>📍 г. Майкоп</span>
-                <span>📍 г. Белореченск</span>
-                <span>📍 ст. Ханская</span>
-                <span>📍 пгт. Тульский</span>
-                <span>📍 ст. Кужорская</span>
-                <span>📍 Ближайшие округа</span>
+            <h2 style="margin-bottom: 40px; font-size: 2.2rem;">Наши услуги</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; text-align: left;">
+                <div style="padding: 25px; border: 1px solid #eee; border-radius: 8px; background: #fdfdfd;">
+                    <h3 style="color: #ffcc00; margin-bottom: 10px;">Монтаж металлочерепицы</h3>
+                    <p>Полный комплекс работ от стропильной системы до конька. Долговечное и красивое покрытие.</p>
+                </div>
+                <div style="padding: 25px; border: 1px solid #eee; border-radius: 8px; background: #fdfdfd;">
+                    <h3 style="color: #ffcc00; margin-bottom: 10px;">Ремонт кровли</h3>
+                    <p>Устранение протечек, замена поврежденных листов, утепление и гидроизоляция старых крыш.</p>
+                </div>
+                <div style="padding: 25px; border: 1px solid #eee; border-radius: 8px; background: #fdfdfd;">
+                    <h3 style="color: #ffcc00; margin-bottom: 10px;">Профнастил и мягкая кровля</h3>
+                    <p>Установка любых видов кровельных материалов под ключ для частных домов и навесов.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Форма контактов -->
-    <section id="contact" class="contact">
+    <!-- Блок Настоящей Единственной Формы заказа -->
+    <section id="contact" style="padding: 60px 0; background: #f9f9f9; text-align: center;">
         <div class="container">
-            <div class="contact-box">
-                <div class="contact-info">
-                    <h2>Оставьте заявку на замер</h2>
-                    <p>Мы перезвоним вам в течение 15 минут для согласования удобного времени бесплатного выезда специалиста.</p>
-                    <div class="contact-phone-big">
-                        <span>Наш телефон:</span>
-                        <a href="tel:89184208725">8 (918) 420-87-25</a>
-                    </div>
+            <h2 style="font-size: 2rem; margin-bottom: 10px;">Рассчитайте стоимость крыши</h2>
+            <p style="color: #666; margin-bottom: 30px;">Оставьте заявку, и мастер свяжется с вами для консультации</p>
+            
+            <form id="tgLeadForm" style="max-width: 500px; margin: 0 auto; background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left;">
+                <div style="margin-bottom: 15px;">
+                    <label style="display:block; margin-bottom: 5px; font-weight: 600;">Ваше имя:</label>
+                    <input type="text" id="clientName" placeholder="Иван" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; font-size: 1rem;">
                 </div>
-                <div class="contact-form-wrapper">
-               <form id="tgLeadForm" style="max-width: 500px; margin: 0 auto; background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left;">
-    <div style="margin-bottom: 15px;">
-        <label style="display:block; margin-bottom: 5px; font-weight: 600;">Ваше имя:</label>
-        <input type="text" id="clientName" placeholder="Иван" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; font-size: 1rem;">
-    </div>
-    
-    <div style="margin-bottom: 20px;">
-        <label style="display:block; margin-bottom: 5px; font-weight: 600;">Телефон:</label>
-        <input type="tel" id="clientPhone" placeholder="+7 (999) 000-00-00" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; font-size: 1rem;">
-    </div>
-    
-    <button type="submit" style="width: 100%; border: none; padding: 14px; font-size: 1rem; cursor: pointer; border-radius: 4px; background: #ffcc00; font-weight: 700; color: #000;">Отправить заявку</button>
-</form>
-
-    <!-- Поле для Имени -->
-    <input type="text" id="name" placeholder="Ваше имя" required style="display: block; width: 100%; padding: 14px; background-color: #ffffff !important; border: 2px solid #bdc3c7 !important; border-radius: 6px; color: #1f2329 !important; font-size: 1rem; font-weight: 600; margin-bottom: 12px; box-sizing: border-box;">
-    
-    <!-- Поле для Телефона -->
-    <input type="tel" id="phone" placeholder="Номер телефона" required style="display: block; width: 100%; padding: 14px; background-color: #ffffff !important; border: 2px solid #bdc3c7 !important; border-radius: 6px; color: #1f2329 !important; font-size: 1rem; font-weight: 600; margin-bottom: 12px; box-sizing: border-box;">
-    
-    <button type="submit" class="btn btn-primary full-width">Отправить заявку</button>
-</form>
-<div id="form-status" style="margin-top: 15px; font-weight: 700; text-align: center;"></div>
-
-<script>
-    // Код для мобильного меню (бургер)
-    const menuBtn = document.getElementById('menuBtn');
-    const navMenu = document.getElementById('navMenu');
-    if (menuBtn && navMenu) {
-        menuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            menuBtn.innerText = navMenu.classList.contains('active') ? '✕' : '☰';
-        });
-    }
-
-    // Железобетонный код отправки формы в Telegram через защищенный фоновый запрос
-    const myTgForm = document.getElementById('tgLeadForm');
-    if (myTgForm) {
-        myTgForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Запрещаем странице перезагружаться!
-            
-            // Берем данные из полей ввода
-            const name = document.getElementById('clientName').value;
-            const phone = document.getElementById('clientPhone').value;
-            
-            // Формируем красивый текст для телефона
-            const textMessage = `🚀 Новая заявка КровляПрофи01:\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}`;
-            
-            // Ваши точные рабочие токены
-            const botToken = '8868845999:AAG8MpwfkRuRyuTkCSudbXDMbBdTphXAUYQ';
-            const chatId = '914128134';
-            
-            // Отправляем запрос на сервера Telegram в фоновом режиме
-            fetch(`https://telegram.org{botToken}/sendMessage`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    chat_id: chatId,
-                    text: textMessage
-                })
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert('Отлично! Заявка успешно отправлена, мастер уже получил уведомление.');
-                    myTgForm.reset(); // Очищаем поля формы
-                } else {
-                    alert('Бот вернул ошибку. Проверьте, запущен ли бот командой /start.');
-                }
-            })
-            .catch(error => {
-                alert('Произошла ошибка отправки. Если у вас включен VPN — выключите его, операторы связи могут блокировать Telegram.');
-            });
-        });
-    }
-     const myTgForm = document.getElementById('tgLeadForm'); 
-</script>
-
-                  
-</body>
-</html> 
-   <!-- Минималистичный и незаметный подвал в самом низу -->
-    <footer class="footer" style="background: #ffffff; padding: 15px 0; border-top: 1px solid rgba(0,0,0,0.04); text-align: center; display: block;">
-        <div class="container">
-            <p style="margin: 0; color: #8e949a; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.3px;">
-                &copy; 2026 КровляПрофи01. Строительство крыш в Республике Адыгея. Все права защищены. Телефон: 8 (918) 420-87-25
-            </p>
+                <div style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom: 5px; font-weight: 600;">Телефон:</label>
+                    <input type="tel" id="clientPhone" placeholder="+7 (999) 000-00-00" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; font-size: 1rem;">
+                </div>
+                <button type="submit" style="width: 100%; border: none; padding: 14px; font-size: 1rem; cursor: pointer; border-radius: 4px; background: #ffcc00; font-weight: 700; color: #000;">Отправить заявку</button>
+            </form>
         </div>
-    </footer>
+    </section>
+
+    <!-- Скрипты управления сайтом (меню + Telegram) -->
+    <script>
+        // Код мобильного бургер-меню
+        const menuBtn = document.getElementById('menuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        if (menuBtn && navMenu) {
+            menuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                menuBtn.innerText = navMenu.classList.contains('active') ? '✕' : '☰';
+            });
+
+            document.querySelectorAll('.nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    menuBtn.innerText = '☰';
+                });
+            });
+        }
+
+        // Железобетонный код отправки формы в Telegram через защищенный фоновый запрос
+        const myTgForm = document.getElementById('tgLeadForm');
+        if (myTgForm) {
+            myTgForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Намертво запрещаем странице перезагружаться!
+                
+                const name = document.getElementById('clientName').value;
+                const phone = document.getElementById('clientPhone').value;
+                
+                const textMessage = `🚀 Новая заявка КровляПрофи01:\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}`;
+                
+                fetch(`https://telegram.org{TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: textMessage
+                    })
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Отлично! Заявка успешно отправлена, мастер уже получил уведомление.');
+                        myTgForm.reset(); 
+                    } else {
+                        alert('Бот вернул ошибку. Проверьте, запущен ли ваш бот в Телеграме командой /start.');
+                    }
+                })
+                .catch(error => {
+                    alert('Произошла ошибка отправки. Если у вас включен VPN — выключите его, операторы связи могут блокировать Telegram.');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
