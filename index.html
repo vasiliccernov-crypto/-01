@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КровляПрофи01 | Строительство и ремонт крыш в Адыгее</title>
+    <link rel="stylesheet" href="style.css">
+    
+ <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+    <!-- Блок плавающих кнопок связи справа внизу -->
+    <div class="fixed-actions-container">
+        <a href="https://wa.me." class="action-btn wa-btn" target="_blank" title="Написать в WhatsApp">💬</a>
+        <a href="tel:89184208725" class="action-btn call-btn" title="Позвонить">📞</a>
+    </div>
+
+   <!-- Шапка сайта -->
+<header class="header">
+    <div class="container header-flex">
+        <div class="logo">Кровля<span>Профи01</span></div>
+        
+        <!-- Кнопка меню для телефонов -->
+        <button class="menu-toggle" id="menuBtn" aria-label="Открыть меню">☰</button>
+        
+        <!-- Навигация -->
+        <nav class="nav" id="navMenu">
+            <a href="#services">Услуги</a>
+            <a href="#portfolio">Наши работы</a>
+            <a href="#reviews">Отзывы</a>
+            <a href="#steps">Этапы</a>
+            <a href="#geo">География</a>
+            <a href="#contact">Контакты</a>
+        </nav>
+        
+        <div class="phone">
+            <span class="phone-label" style="color: #ffcc00; font-weight: 700; text-transform: uppercase; font-size: 0.7rem;">Выезд на замер 0 руб</span>
+            <a href="tel:89184208725">8 (918) 420-87-25</a>
+        </div>
+    </div>
+</header>
+
+<!-- Простой скрипт для открытия/закрытия меню и скрытия его при клике на раздел -->
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    // Открытие/закрытие по клику на бургер
+    menuBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        menuBtn.innerText = navMenu.classList.contains('active') ? '✕' : '☰';
+    });
+
+    // Закрытие меню при клике на любой раздел
+    document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            menuBtn.innerText = '☰';
+        });
+    });
+</script>
+
+    <!-- Главный баннер -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="badge"> Строго, соблюдаю технологии и качество</span>
+                <h1>Надежная крыша<br>для вашего дома</h1>
+                <p>Монтаж и ремонт кровли любой сложности.Надежная бригада, фиксированная смета и официальная гарантия 4 года по договору.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Рассчитать стоимость</a>
+                    <a href="#portfolio" class="btn btn-secondary">Смотреть работы</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Цифры компании -->
+    <section class="stats">
+        <div class="container grid-4">
+            <div class="stat-card">
+                <h3>10+ лет</h3>
+                <p>Опыта в строительстве</p>
+            </div>
+            <div class="stat-card">
+                <h3>110+</h3>
+                <p>Сданных крыш</p>
+            </div>
+            <div class="stat-card">
+                <h3>4 года</h3>
+                <p>Гарантии по договору</p>
+            </div>
+            <div class="stat-card">
+                <h3>0%</h3>
+                <p>Скрытых переплат</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Услуги и цены -->
+    <section id="services" class="services">
+        <div class="container">
+            <span class="section-subtitle">Направления работы</span>
+            <h2 class="section-title">Наши кровельные услуги</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-img-wrapper"><img src="images/service1.jpg" alt="Монтаж под ключ" class="card-img"></div>
+                    <div class="card-content">
+                        <h3>Монтаж под ключ</h3>
+                        <p>Полный комплекс кровельных работ: от возведения стропил до финальной укладки металлочерепицы или профнастила.</p>
+                        <div class="card-footer">
+                            <span class="price">от 950 ₽ / м²</span>
+                            <a href="#contact" class="card-link">Заказать →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrapper"><img src="images/service2.jpg" alt="Капитальный ремонт" class="card-img"></div>
+                    <div class="card-content">
+                        <h3>Капитальный ремонт</h3>
+                        <p>Устранение протечек, замена поврежденной обрешетки, исправление ошибок прошлых мастеров, гидроизоляция.</p>
+                        <div class="card-footer">
+                            <span class="price">от 400 ₽ / м²</span>
+                            <a href="#contact" class="card-link">Заказать →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrapper"><img src="images/service3.jpg" alt="Замена покрытия" class="card-img"></div>
+                    <div class="card-content">
+                        <h3>Замена покрытия</h3>
+                        <p>Быстрый демонтаж старого материала, укладка современного долговечного материала.</p>
+                        <div class="card-footer">
+                            <span class="price">от 650 ₽ / м²</span>
+                            <a href="#contact" class="card-link">Заказать →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Наши работы / Примеры объектов -->
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <span class="section-subtitle">Наш опыт</span>
+        <h2 class="section-title">Примеры объектов</h2>
+        
+        <!-- ИСПРАВЛЕНО: Чистый класс portfolio-grid без конфликтующих старых сеток -->
+        <div class="portfolio-grid">
+            
+            <!-- Объект 1 -->
+            <div class="portfolio-item">
+                <div class="portfolio-img-box">
+                    <img src="images/portfolio1.jpg" alt="Объект 1">
+                    <span class="portfolio-badge">12 дней</span>
+                </div>
+                <h4>Монтаж под ключ</h4>
+                <p>Частный дом 160 м². Металлочерепица , полный монтаж свесов крыши и водосточной системы.</p>
+            </div>
+
+            <!-- Объект 2 -->
+            <div class="portfolio-item">
+                <div class="portfolio-img-box">
+                    <img src="images/portfolio2.jpg" alt="Объект 2">
+                    <span class="portfolio-badge">9 дней</span>
+                </div>
+                <h4>Монтаж мягкой кровли</h4>
+                <p>Дом 170 м². Монтаж стропильной системы,обрешетки,пленки,водосточной системы и укладка кровли.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Блок Наши Reels Работы -->
+<section id="reels-work" class="reels-section">
+    <div class="container">
+        <span class="section-subtitle">Процесс работы</span>
+        <h2 class="section-title">Наши Reels работы</h2>
+        
+        <div class="reels-grid">
+            <!-- Видео 1 -->
+            <div class="reels-item">
+                <video src="video/reels1.mp4" muted loop playsinline></video>
+                <div class="reels-play-btn">▶</div>
+            </div>
+            <!-- Видео 2 -->
+            <div class="reels-item">
+                <video src="video/reels2.mp4" muted loop playsinline></video>
+                <div class="reels-play-btn">▶</div>
+            </div>
+            <!-- Видео 3 -->
+            <div class="reels-item">
+                <video src="video/reels3.mp4" muted loop playsinline></video>
+                <div class="reels-play-btn">▶</div>
+            </div>
+            <!-- Видео 4 -->
+            <div class="reels-item">
+                <video src="video/reels4.mp4" muted loop playsinline></video>
+                <div class="reels-play-btn">▶</div>
+            </div>
+            <!-- Видео 5 -->
+            <div class="reels-item">
+                <video src="video/reels5.mp4" muted loop playsinline></video>
+                <div class="reels-play-btn">▶</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Скрипт: запускает видео при клике и ставит на паузу при повторном клике -->
+<script>
+    document.querySelectorAll('.reels-item').forEach(item => {
+        const video = item.querySelector('video');
+        const playBtn = item.querySelector('.reels-play-btn');
+        
+        item.addEventListener('click', () => {
+            if (video.paused) {
+                // Останавливаем все другие видео перед запуском нового
+                document.querySelectorAll('video').forEach(v => v.pause());
+                document.querySelectorAll('.reels-play-btn').forEach(b => b.style.display = 'flex');
+                
+                video.play();
+                playBtn.style.display = 'none';
+            } else {
+                video.pause();
+                playBtn.style.display = 'flex';
+            }
+        });
+    });
+</script>
+
+
+<!-- Блок отзывов -->
+<section id="reviews" class="reviews-section">
+    <div class="container">
+        <h2 class="section-title">Что говорят наши клиенты</h2>
+        
+        <div class="reviews-grid">
+
+            <!-- Отзыв 1: Аслан -->
+            <div class="card">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                    <!-- РАЗМЕР КАРТИНКИ ЗАФИКСИРОВАН В HTML -->
+                    <img src="images/client1.jpg" alt="Аслан" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid #FFCC00; flex-shrink: 0;">
+                    <div>
+                        <h4 style="margin: 0; font-size: 1.1rem; color: #1f2329;">Аслан</h4>
+                        <span style="font-size: 0.8rem; color: #5e6670; font-weight: 600;">г. Майкоп</span>
+                    </div>
+                </div>
+                <p style="color: #5e6670; font-size: 0.9rem; font-style: italic; min-height: 110px; margin: 0;">"Делали крышу с нуля на доме. Сделали быстро, всего за 2 недели. Итоговая цена осталась такой же, как и посчитали в смете в самый первый день. Рекомендую!"</p>
+                <div style="color: #FFCC00; font-size: 1.1rem; margin-top: 15px;">★★★★★</div>
+            </div>
+
+            <!-- Отзыв 2: Сергей Николаевич -->
+            <div class="card">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                    <!-- РАЗМЕР КАРТИНКИ ЗАФИКСИРОВАН В HTML -->
+                    <img src="images/client2.jpg" alt="Сергей Николаевич" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid #FFCC00; flex-shrink: 0;">
+                    <div>
+                        <h4 style="margin: 0; font-size: 1.1rem; color: #1f2329;">Сергей Николаевич</h4>
+                        <span style="font-size: 0.8rem; color: #5e6670; font-weight: 600;">г. Белореченск</span>
+                    </div>
+                </div>
+                <p style="color: #5e6670; font-size: 0.9rem; font-style: italic; min-height: 110px; margin: 0;">"Ребята делали полный монтаж. Работу сделали очень хорошо,мастер бесплатно приехал на замер, всё посчитал. Очень доволен результатом."</p>
+                <div style="color: #FFCC00; font-size: 1.1rem; margin-top: 15px;">★★★★★</div>
+            </div>
+
+            <!-- Отзыв 3: Марина К. -->
+            <div class="card">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                    <!-- РАЗМЕР КАРТИНКИ ЗАФИКСИРОВАН В HTML -->
+                    <img src="images/client3.jpg" alt="Марина К." style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid #FFCC00; flex-shrink: 0;">
+                    <div>
+                        <h4 style="margin: 0; font-size: 1.1rem; color: #1f2329;">Марина К.</h4>
+                        <span style="font-size: 0.8rem; color: #5e6670; font-weight: 600;">ст. Ханская</span>
+                    </div>
+                </div>
+                <p style="color: #5e6670; font-size: 0.9rem; font-style: italic; min-height: 110px; margin: 0;">"Нужна была замена старого шифера на профнастил. Сделали аккуратно, и быстро. Отдельный плюс за вежливое общение и пунктуальность!"</p>
+                <div style="color: #FFCC00; font-size: 1.1rem; margin-top: 15px;">★★★★★</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Этапы работы -->
+    <section id="steps" class="steps">
+        <div class="container">
+            <span class="section-subtitle">Процесс</span>
+            <h2 class="section-title">Этапы сотрудничества</h2>
+            <div class="grid-4">
+                <div class="step-item">
+                    <div class="step-num">01</div>
+                    <h4>Замер</h4>
+                    <p>Бесплатный выезд мастера на ваш объект для точного обмера.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">02</div>
+                    <h4>Смета</h4>
+                    <p>Прозрачный расчет стоимости, фиксируемый в договоре.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">03</div>
+                    <h4>Монтаж</h4>
+                    <p>Быстрая доставка материалов и выполнение всех работ качественно.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">04</div>
+                    <h4>Гарантия</h4>
+                    <p>Сдача объекта, подписание акта и выдача гарантии на 4 лет.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Зона обслуживания -->
+    <section id="geo" class="portfolio" style="background: #f7f9fa; border-top: 1px solid rgba(0,0,0,0.04);">
+        <div class="container" style="text-align: center;">
+            <span class="section-subtitle">География работы</span>
+            <h2 class="section-title">Зона обслуживания</h2>
+            <p style="max-width: 700px; margin: 0 auto 25px; color: #5e6670; font-weight: 500;">Оперативно и бесплатно приедем на замер в следующие населенные пункты и их ближайшие округа:</p>
+            <div style="background: #ffffff; padding: 25px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.04); font-weight: 700; color: #1f2329; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px 35px; font-size: 1.1rem;">
+                <span>📍 г. Майкоп</span>
+                <span>📍 г. Белореченск</span>
+                <span>📍 ст. Ханская</span>
+                <span>📍 пгт. Тульский</span>
+                <span>📍 ст. Кужорская</span>
+                <span>📍 Ближайшие округа</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма контактов -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-box">
+                <div class="contact-info">
+                    <h2>Оставьте заявку на замер</h2>
+                    <p>Мы перезвоним вам в течение 15 минут для согласования удобного времени бесплатного выезда специалиста.</p>
+                    <div class="contact-phone-big">
+                        <span>Наш телефон:</span>
+                        <a href="tel:89184208725">8 (918) 420-87-25</a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form id="tg-form" class="form">
+    <!-- Поле для Имени -->
+    <input type="text" id="name" placeholder="Ваше имя" required style="display: block; width: 100%; padding: 14px; background-color: #ffffff !important; border: 2px solid #bdc3c7 !important; border-radius: 6px; color: #1f2329 !important; font-size: 1rem; font-weight: 600; margin-bottom: 12px; box-sizing: border-box;">
+    
+    <!-- Поле для Телефона -->
+    <input type="tel" id="phone" placeholder="Номер телефона" required style="display: block; width: 100%; padding: 14px; background-color: #ffffff !important; border: 2px solid #bdc3c7 !important; border-radius: 6px; color: #1f2329 !important; font-size: 1rem; font-weight: 600; margin-bottom: 12px; box-sizing: border-box;">
+    
+    <button type="submit" class="btn btn-primary full-width">Отправить заявку</button>
+</form>
+<div id="form-status" style="margin-top: 15px; font-weight: 700; text-align: center;"></div>
+                         <script src="script.js"></script>
+</body>
+</html> 
+   <!-- Минималистичный и незаметный подвал в самом низу -->
+    <footer class="footer" style="background: #ffffff; padding: 15px 0; border-top: 1px solid rgba(0,0,0,0.04); text-align: center; display: block;">
+        <div class="container">
+            <p style="margin: 0; color: #8e949a; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.3px;">
+                &copy; 2026 КровляПрофи01. Строительство крыш в Республике Адыгея. Все права защищены. Телефон: 8 (918) 420-87-25
+            </p>
+        </div>
+    </footer>
