@@ -347,19 +347,20 @@
                     </div>
                 </div>
                 <div class="contact-form-wrapper">
-                    <form action="https://telegram.org" method="POST" style="max-width: 500px; margin: 0 auto; background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left;">
-    
-    <!-- Скрытое поле: указывает боту, в какой чат слать сообщение -->
-    <input type="hidden" name="chat_id" value="914128134">
-
+               <form id="tgLeadForm" style="max-width: 500px; margin: 0 auto; background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left;">
     <div style="margin-bottom: 15px;">
         <label style="display:block; margin-bottom: 5px; font-weight: 600;">Ваше имя:</label>
-        <!-- Поменяли имя поля на text, чтобы Telegram вывел его на экран -->
-        <input type="text" name="text" placeholder="Иван" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; font-size: 1rem;">
+        <input type="text" id="clientName" placeholder="Иван" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; font-size: 1rem;">
+    </div>
+    
+    <div style="margin-bottom: 20px;">
+        <label style="display:block; margin-bottom: 5px; font-weight: 600;">Телефон:</label>
+        <input type="tel" id="clientPhone" placeholder="+7 (999) 000-00-00" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; font-size: 1rem;">
     </div>
     
     <button type="submit" style="width: 100%; border: none; padding: 14px; font-size: 1rem; cursor: pointer; border-radius: 4px; background: #ffcc00; font-weight: 700; color: #000;">Отправить заявку</button>
 </form>
+
     <!-- Поле для Имени -->
     <input type="text" id="name" placeholder="Ваше имя" required style="display: block; width: 100%; padding: 14px; background-color: #ffffff !important; border: 2px solid #bdc3c7 !important; border-radius: 6px; color: #1f2329 !important; font-size: 1rem; font-weight: 600; margin-bottom: 12px; box-sizing: border-box;">
     
@@ -369,7 +370,62 @@
     <button type="submit" class="btn btn-primary full-width">Отправить заявку</button>
 </form>
 <div id="form-status" style="margin-top: 15px; font-weight: 700; text-align: center;"></div>
-                        
+
+<script>
+    // Код для мобильного меню (бургер)
+    const menuBtn = document.getElementById('menuBtn');
+    const navMenu = document.getElementById('navMenu');
+    if (menuBtn && navMenu) {
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuBtn.innerText = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+    }
+
+    // Железобетонный код отправки формы в Telegram через защищенный фоновый запрос
+    const myTgForm = document.getElementById('tgLeadForm');
+    if (myTgForm) {
+        myTgForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Запрещаем странице перезагружаться!
+            
+            // Берем данные из полей ввода
+            const name = document.getElementById('clientName').value;
+            const phone = document.getElementById('clientPhone').value;
+            
+            // Формируем красивый текст для телефона
+            const textMessage = `🚀 Новая заявка КровляПрофи01:\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}`;
+            
+            // Ваши точные рабочие токены
+            const botToken = '8868845999:AAG8MpwfkRuRyuTkCSudbXDMbBdTphXAUYQ';
+            const chatId = '914128134';
+            
+            // Отправляем запрос на сервера Telegram в фоновом режиме
+            fetch(`https://telegram.org{botToken}/sendMessage`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: textMessage
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Отлично! Заявка успешно отправлена, мастер уже получил уведомление.');
+                    myTgForm.reset(); // Очищаем поля формы
+                } else {
+                    alert('Бот вернул ошибку. Проверьте, запущен ли бот командой /start.');
+                }
+            })
+            .catch(error => {
+                alert('Произошла ошибка отправки. Если у вас включен VPN — выключите его, операторы связи могут блокировать Telegram.');
+            });
+        });
+    }
+</script>
+
+                    
 </body>
 </html> 
    <!-- Минималистичный и незаметный подвал в самом низу -->
