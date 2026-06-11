@@ -1,9 +1,11 @@
 // Маскируем данные, разбивая их на части (защита от сканирования)
-const part1 = '8868845999';
-const part2 = 'AAG8MpwfkRuRyuTkCSudbXDMbBdTphXAUYQ';
-const TELEGRAM_BOT_TOKEN = `${part1}:${part2}`;
-const TELEGRAM_CHAT_ID = '914128134';
+c// Замените эти кусочки на свой токен от BotFather
+const tokenPartA = '8868845999'; 
+const tokenPartB = 'AAG8MpwfkRuRyuTkCSudbXDMbBdTphXAUYQ';
+const TELEGRAM_BOT_TOKEN = `${tokenPartA}:${tokenPartB}`;
 
+// Замените этот номер на ваш личный ID от getmyid_bot
+const TELEGRAM_CHAT_ID = '914128134'; 
 // Код для мобильного меню
 const menuBtn = document.getElementById('menuBtn');
 const navMenu = document.getElementById('navMenu');
